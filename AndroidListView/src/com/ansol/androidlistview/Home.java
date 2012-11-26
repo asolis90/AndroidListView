@@ -8,9 +8,9 @@ import android.widget.ListView;
 
 public class Home extends Activity {
 
-	String[] Months = { "January", "February", "March", "April", "May",
-			"June", "July", "August", "September", "October", "November",
-			"December" };
+	//Content list for Months to be displayed in ListView
+	String[] Months = { "January", "February", "March", "April", "May", "June",
+			"July", "August", "September", "October", "November", "December" };
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -19,14 +19,11 @@ public class Home extends Activity {
 
 		ListView lv = (ListView) findViewById(R.id.listView1);
 
-		ArrayAdapter<String> adapter
+		//Set adapter to hold Months
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, Months);
 
-		= new ArrayAdapter<String>(this,
-
-		android.R.layout.simple_list_item_1,
-
-		Months);
-
+		// Set ArrayAdapter to ListView
 		lv.setAdapter(adapter);
 
 	}
